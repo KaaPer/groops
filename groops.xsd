@@ -5302,6 +5302,11 @@
 								<xs:documentation>GriddedDataTimeSeries of longwave flux values [W/m^2]</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element name="inputfileShortwaveFluxTimeSeries" type="filename" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>GriddedDataTimeSeries of reflected shortwave flux values [W/m^2]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="factorSolarRadiation" type="double" minOccurs="0" default="1.0">
 							<xs:annotation>
 								<xs:documentation>Solar radiation pressure is multiplied by this factor</xs:documentation>
