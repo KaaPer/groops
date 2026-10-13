@@ -14307,6 +14307,67 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="GriddedDataTimeSeries2Era5Flux">
+				<xs:annotation>
+					<xs:documentation>Convert ERA5 accumulated TOA radiation to shortwave/longwave flux</xs:documentation>
+					<xs:appinfo>tag: Grid</xs:appinfo>
+					<xs:appinfo>tag: TimeSeries</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="outputfileShortwaveFlux" type="filename">
+							<xs:annotation>
+								<xs:documentation>reflected shortwave flux [W/m^2]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="outputfileLongwaveFlux" type="filename">
+							<xs:annotation>
+								<xs:documentation>emitted longwave flux [W/m^2]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="inputfileGriddedDataTimeSeries" type="filename">
+							<xs:annotation>
+								<xs:documentation>ERA5 accumulations [J/m^2]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="columnTisr" type="uint" minOccurs="0" default="0">
+							<xs:annotation>
+								<xs:documentation>data column of TOA incident solar radiation</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="columnTsr" type="uint" minOccurs="0" default="1">
+							<xs:annotation>
+								<xs:documentation>data column of top net solar radiation</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="columnTtr" type="uint" minOccurs="0" default="2">
+							<xs:annotation>
+								<xs:documentation>data column of top net thermal radiation</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="accumulationInterval" type="double" minOccurs="0" default="3600">
+							<xs:annotation>
+								<xs:documentation>[seconds] accumulation period of the input</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="inputResolution" type="double" minOccurs="0" default="0.25">
+							<xs:annotation>
+								<xs:documentation>[degree] grid spacing of the input</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="resolution" type="double" minOccurs="0" default="1.0">
+							<xs:annotation>
+								<xs:documentation>[degree] cell size of the output grid</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="height" type="double" minOccurs="0" default="30000">
+							<xs:annotation>
+								<xs:documentation>[m] ellipsoidal height of the output grid points</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="GriddedDataTimeSeries2GriddedData">
 				<xs:annotation>
 					<xs:documentation>Write a griddedDataTimeSeries as griddedData for each epoch</xs:documentation>
